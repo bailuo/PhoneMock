@@ -1,0 +1,15 @@
+{
+    "author": "Wei Ding",
+    "manifest_version": 1,
+    "name": "JSShell",
+    "version": "0.0.1",
+    "default_local": "en",
+    "description": "provide a running enviroment for js bridge",
+    "backgroud": {
+        "persistent": true
+    },
+    "storage": {
+        "managed_schema": "schema.json"
+    },
+    "homepage_url": "./index.html"
+}
