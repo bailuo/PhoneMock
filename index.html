@@ -1,0 +1,45 @@
+<html>
+
+<head></head>
+
+<body>
+    <div class="row">
+        <label class="row-label">状态:</label><span id="toggleButton" class="toggle-button" onclick="togglePlugin"></span>
+    </div>
+    <div class="row">
+        <span class="row-content" onclick="openDataSetPage">设置数据</span>>
+    </div>
+</body>
+<script>
+    var toggleBtn = getElementById('toggleButton');
+    var isActiviated = window.localStorage.getItem('phoneMockStatus');
+
+    if (isActiviated && isActiviated !== undefined && isActiviated.data) {
+        toggleBtn.className = "toggle-button plugin-enabled";
+        toggleButton.innerHTML = '已开启';
+    } else {
+        toggleBtn.className = "toggle-button plugin-disabled";
+        toggleButton.innerHTML = '已关闭';
+    }
+    // enable 或者disable按钮
+    function togglePlugin() {
+        if (!isActiviated || isActiviated === undefined || !isActiviated.data) {
+            window.localStorage.setItem('phoneMockStatus', 1);
+            toggleBtn.className = "toggle-button plugin-enabled";
+            toggleButton.innerHTML = '已开启';
+        } else {
+            window.localStorage.setItem('phoneMockStatus', 0);
+            toggleBtn.className = "toggle-button plugin-disabled";
+            toggleButton.innerHTML = '已关闭';
+        }
+    }
+
+    function openDataSetPage() {
+        var linkEle = document.createElement('a');
+        linkEle.target = '_blank';
+        linkEle.href = './index.html';
+        linkEle.click();
+    }
+</script>
+
+</html

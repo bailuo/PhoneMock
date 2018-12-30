@@ -1,15 +1,48 @@
 {
     "author": "Wei Ding",
     "manifest_version": 1,
-    "name": "JSShell",
+    "name": "PhoneMock",
     "version": "0.0.1",
     "default_local": "en",
     "description": "provide a running enviroment for js bridge",
     "backgroud": {
+        "scripts": ["background.js"],
         "persistent": true
     },
+    "permissions": [
+        "contextMenus",
+        "activeTab",
+        "storage"
+    ],
     "storage": {
         "managed_schema": "schema.json"
     },
-    "homepage_url": "./index.html"
+    "homepage_url": "./index.html",
+    // 点击浏览器插件图标
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "./images/icon-disabled.png"
+    },
+    "commands": {
+        "_execute_browser_action": {
+            "description": "Opens A Page To Set Data"
+        }
+    },
+    // "page_action": {
+    //     // 默认icon， 同时为失效是的icon
+    //     "default_icon": {
+    //         "16": "./images/icon-disabled.png",
+    //         "32": "./images/icon-disabled.png"
+    //     },
+    //     // 失效时的icon
+    //     "disaled_icon": {
+    //         "16": "./images/icon-disabled.png",
+    //         "32": "./images/icon-disabled.png"
+    //     },
+    //     // 生效时的icon
+    //     "enabled_icon": {
+    //         "16": "./images/icon-disabled.png",
+    //         "32": "./images/icon-disabled.png"
+    //     }
+    // }
 }
